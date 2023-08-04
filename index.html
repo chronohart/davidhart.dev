@@ -33,9 +33,32 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+	<script type="text/javascript">
+		function alterText(){
+			document.getElementById('spanAge').innerHTML = getAge();
+			let homeLocations = document.getElementsByClassName('HomeLocation');
+			for (let i = 0; i < homeLocations.length; i++) {
+				homeLocations[i].innerHTML = "Cranston, Rhode Island, USA";
+			}
+		}
+		
+		function getAge() {
+			birthDate = new Date('1988-01-10');
+			currentDate = new Date();
+
+			var years = (currentDate.getFullYear() - birthDate.getFullYear());
+
+			if (currentDate.getMonth() < birthDate.getMonth() || 
+				currentDate.getMonth() == birthDate.getMonth() && currentDate.getDate() < birthDate.getDate()) {
+				years--;
+			}
+
+			return years;
+		}
+	</script>
 </head>
 
-<body>
+<body onLoad="javascript:alterText();">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -70,7 +93,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>David Hart</h1>
-      <p>I'm a <span class="typed" data-typed-items="Developer,Nerd,Freelancer,Reader"></span></p>
+      <p>I'm <span class="typed" data-typed-items="an Engineer,a Gamer,a Developer,a Nerd,a Freelancer,a Reader"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -95,8 +118,8 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Software Engineering Technology</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Cincinnati, Ohio, USA</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>33</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span class="HomeLocation"></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="spanAge"></span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -243,7 +266,7 @@
               <h4>David Hart</h4>
               <p><em>I am a dedicated and passionate developer with over 12 years of experience in the field. With a diverse portfolio of projects, I have been involved in every aspect of the software development process, from maintaining the server a system runs on to building a comfortable UX for a client, as well as direct client interaction, such as developing project requirements, assisting the client in implementing a solution, and debugging projects already in the client's hands.</em></p>
               <ul>
-                <li>Cincinnati, Ohio, USA</li>
+				<li><span class="HomeLocation"></span></li>
                 <li><a href="tel:+15135494753">+1 (513) 549-4753</a></li>
                 <li><a href="mailto:david@davidhart.dev">david@davidhart.dev</a></li>
               </ul>
@@ -440,11 +463,11 @@
 
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
-				<a href="https://www.openstreetmap.org/#map=12/39.1366/-84.5240" target="_blank">
+				<a href="https://www.openstreetmap.org/#map=14/41.7810/-71.4450" target="_blank">
 				  <div class="address">
 					<i class="bi bi-geo-alt"></i>
 					<h4>Location:</h4>
-					<p>Cincinnati, Ohio, USA</p>
+					<p class="HomeLocation"></p>
 				  </div>
 				</a>
 
@@ -464,7 +487,7 @@
 				  </div>
 				</a>
 
-              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-84.79831695556642%2C39.017583234963475%2C-84.24968719482422%2C39.255385575343894&amp;layer=mapnik" frameborder="0" style="border: 0; width: 100%; height: 290px;"></iframe>
+              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-71.51361465454103%2C41.75165656948415%2C-71.37628555297853%2C41.81028396638375&amp;layer=mapnik" frameborder="0" style="border: 0; width: 100%; height: 290px;"></iframe>
             </div>
 
           </div>
